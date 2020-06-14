@@ -1,0 +1,50 @@
+version: '3.7'
+
+services:
+  creditum-notary:
+    image: corda/corda-zulu-java1.8-4.4
+    container_name: creditum-notary
+    ports:
+      - "10003:10201"
+      - "2000:2222"
+    volumes:
+      - ${PWD}/creditum-notary/node.conf:/etc/corda/node.conf
+      - ${PWD}/creditum-notary/node.conf:/opt/corda/node.conf
+      - ${PWD}/creditum-notary/certificates:/opt/corda/certificates
+      - ${PWD}/creditum-notary/persistence:/opt/corda/persistence
+      - ${PWD}/creditum-notary/logs:/opt/corda/logs
+      - ${PWD}/shared/cordapps:/opt/corda/cordapps
+      - ${PWD}/shared/node-infos:/opt/corda/additional-node-infos
+      - ${PWD}/shared/network-parameters:/opt/corda/network-parameters
+
+  creditum-supplier:
+    image: corda/corda-zulu-java1.8-4.4
+    container_name: creditum-supplier
+    ports:
+      - "10006:10201"
+      - "2001:2222"
+    volumes:
+      - ${PWD}/creditum-supplier/node.conf:/etc/corda/node.conf
+      - ${PWD}/creditum-notary/node.conf:/opt/corda/node.conf
+      - ${PWD}/creditum-supplier/certificates:/opt/corda/certificates
+      - ${PWD}/creditum-supplier/persistence:/opt/corda/persistence
+      - ${PWD}/creditum-supplier/logs:/opt/corda/logs
+      - ${PWD}/shared/cordapps:/opt/corda/cordapps
+      - ${PWD}/shared/node-infos:/opt/corda/additional-node-infos
+      - ${PWD}/shared/network-parameters:/opt/corda/network-parameters
+
+  creditum-consumer:
+    image: corda/corda-zulu-java1.8-4.4
+    container_name: creditum-consumer
+    ports:
+      - "10009:10201"
+      - "2002:2222"
+    volumes:
+      - ${PWD}/creditum-consumer/node.conf:/etc/corda/node.conf
+      - ${PWD}/creditum-notary/node.conf:/opt/corda/node.conf
+      - ${PWD}/creditum-consumer/certificates:/opt/corda/certificates
+      - ${PWD}/creditum-consumer/persistence:/opt/corda/persistence
+      - ${PWD}/creditum-consumer/logs:/opt/corda/logs
+      - ${PWD}/shared/cordapps:/opt/corda/cordapps
+      - ${PWD}/shared/node-infos:/opt/corda/additional-node-infos
+      - ${PWD}/shared/network-parameters:/opt/corda/network-parameters

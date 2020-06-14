@@ -1,0 +1,16 @@
+Apache [creditum-cordapp]
+Copyright 2016 Mohamed Hamtou
+
+This product includes software developed at R3 (https://www.r3.com/).
+
+The entirety of the java source code and tests were developed by R3 as a corda training example (https://github.com/corda/corda-training-solutions)
+docker-compose file was initially created by R3 corda (https://gist.github.com/ashutoshmeher-r3/e6bfd7c76d11b20ef4a8641823168842#file-docker-compose-corda-yaml)
+
+Mohamed Hamtou has included some modifications including:
+* Using lombok to create boilerplate code (e.g. equals, toString, constructors, ... etc)
+* Added a constructor for deserialization in `com.coffeebeans.creditum.state.IOUState`
+* Restricting access modifier for fields.
+* Replace direct access to instance variables with getter access
+* Upgrading docker-compose version to 3.7 and using absolute paths to mount directories instead or relative paths
+* Changed test names to be appended with `Test` instead of `Tests` (e.g. `IOUStateTest` instead of `IOUStateTests`)
+* Opted to not use flow tests as the network setup is heaveily dependednt on gradle

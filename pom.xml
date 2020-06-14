@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.coffeebeans.creditum</groupId>
+  <artifactId>creditum-cordapp</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>creditum-cordapp</name>
+  <description>IOU based cordapp with maven docker compose</description>
+
+  <properties>
+    <maven.compiler.parameters>true</maven.compiler.parameters>  <!-- To keep parameter names-->
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <corda-core.version>4.4</corda-core.version>
+    <corda-node-driver.version>4.1</corda-node-driver.version>
+    <corda-djvm.version>4.0</corda-djvm.version>
+  </properties>
+
+  <repositories>
+    <repository>
+      <id>jitpack</id>
+      <name>Jitpack Repository</name>
+      <url>https://jitpack.io</url>
+      <layout>default</layout>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>corda</id>
+      <name>Corda Repository</name>
+      <url>https://ci-artifactory.corda.r3cev.com/artifactory/corda</url>
+      <layout>default</layout>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>corda_releases</id>
+      <name>Corda Releases Repository</name>
+      <url>https://ci-artifactory.corda.r3cev.com/artifactory/corda-solutions-releases</url>
+      <layout>default</layout>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+  <dependencies>
+
+    <!-- Corda dependencies -->
+    <dependency>
+      <groupId>net.corda</groupId>
+      <artifactId>corda-core</artifactId>
+      <version>${corda-core.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>net.corda</groupId>
+      <artifactId>corda-confidential-identities</artifactId>
+      <version>${corda-core.version}</version>
+    </dependency>
+    <dependency>
+    <groupId>net.corda</groupId>
+    <artifactId>corda-finance-contracts</artifactId>
+    <version>${corda-core.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>net.corda</groupId>
+      <artifactId>corda-finance-workflows</artifactId>
+      <version>${corda-core.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>net.corda</groupId>
+      <artifactId>corda-jackson</artifactId>
+      <version>${corda-core.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>net.corda</groupId>
+      <artifactId>corda-rpc</artifactId>
+      <scope>compile</scope>
+      <version>${corda-core.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>net.corda</groupId>
+      <artifactId>corda-node-api</artifactId>
+      <version>${corda-core.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>net.corda</groupId>
+      <artifactId>corda</artifactId>
+      <version>${corda-core.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>net.corda</groupId>
+      <artifactId>corda-test-utils</artifactId>
+      <scope>test</scope>
+      <version>${corda-core.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>com.palominolabs.metrics</groupId>
+          <artifactId>metrics-new-relic</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>net.corda</groupId>
+      <artifactId>corda-node-driver</artifactId>
+      <scope>test</scope>
+      <version>${corda-node-driver.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>net.corda</groupId>
+      <artifactId>corda-djvm</artifactId>
+      <version>${corda-djvm.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>1.4.197</version>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.12</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.validation</groupId>
+      <artifactId>validation-api</artifactId>
+      <version>2.0.1.Final</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>
