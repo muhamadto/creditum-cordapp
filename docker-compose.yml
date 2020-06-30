@@ -9,7 +9,6 @@ services:
       - "2000:2222"
     volumes:
       - ${PWD}/creditum-notary/node.conf:/etc/corda/node.conf
-      - ${PWD}/creditum-notary/node.conf:/opt/corda/node.conf
       - ${PWD}/creditum-notary/certificates:/opt/corda/certificates
       - ${PWD}/creditum-notary/persistence:/opt/corda/persistence
       - ${PWD}/creditum-notary/logs:/opt/corda/logs
@@ -25,7 +24,6 @@ services:
       - "2001:2222"
     volumes:
       - ${PWD}/creditum-supplier/node.conf:/etc/corda/node.conf
-      - ${PWD}/creditum-notary/node.conf:/opt/corda/node.conf
       - ${PWD}/creditum-supplier/certificates:/opt/corda/certificates
       - ${PWD}/creditum-supplier/persistence:/opt/corda/persistence
       - ${PWD}/creditum-supplier/logs:/opt/corda/logs
@@ -41,7 +39,6 @@ services:
       - "2002:2222"
     volumes:
       - ${PWD}/creditum-consumer/node.conf:/etc/corda/node.conf
-      - ${PWD}/creditum-notary/node.conf:/opt/corda/node.conf
       - ${PWD}/creditum-consumer/certificates:/opt/corda/certificates
       - ${PWD}/creditum-consumer/persistence:/opt/corda/persistence
       - ${PWD}/creditum-consumer/logs:/opt/corda/logs
