@@ -13,4 +13,4 @@ Mohamed Hamtou has included some modifications including:
 * Replace direct access to instance variables with getter access
 * Upgrading docker-compose version to 3.7 and using absolute paths to mount directories instead or relative paths
 * Changed test names to be appended with `Test` instead of `Tests` (e.g. `IOUStateTest` instead of `IOUStateTests`)
-* Opted to not use flow tests as the network setup is heaveily dependednt on gradle
+* Opted to not use flow tests as the network setup is heavily dependant on gradle
