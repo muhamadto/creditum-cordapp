@@ -144,7 +144,7 @@ otherResults: []
 ```
 ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 2002 user1@localhost
 ```
-* Query the hedge fund valet
+* Query the corporation valet
 ```
 run vaultQuery contractStateType: com.coffeebeans.creditum.state.IOUState
 ```
