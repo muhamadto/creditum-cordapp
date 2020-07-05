@@ -49,7 +49,6 @@
   </repositories>
 
   <dependencies>
-
     <!-- Corda dependencies -->
     <dependency>
       <groupId>net.corda</groupId>
