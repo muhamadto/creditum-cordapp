@@ -12,6 +12,7 @@ mvn clean install
 ```
 * Run the local network
 ```
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 sh ./create_nodes.sh
 ```
 * Login to your nodes, password is `test`, check `*.conf` file to figure out port
